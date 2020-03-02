@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api;
+
+service Transmitter {
+    rpc Send(SendRequest) returns (SendResponse) {}
+}
+
+message SendRequest {
+    string time = 1;
+    repeated string timeline = 2;
+    repeated float values = 3;
+}
+
+message SendResponse {
+    bool Success = 1;
+}
